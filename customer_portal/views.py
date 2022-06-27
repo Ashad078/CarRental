@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate,login
 from django.contrib import auth
 from customer_portal.models import *
 from django.contrib.auth.decorators import login_required
@@ -19,21 +19,25 @@ def login(request):
     return render(request, 'customer/login.html')
 
 def auth_view(request):
-    if request.user.is_authenticated:
-        return render(request, 'customer/home_page.html')
-    else:
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        try:
-            customer = Customer.objects.get(user = user)
-        except:
-            customer = None
-        if customer is not None:
-            auth.login(request, user)
+    if request.user.is_authenticated :
+        print(request.user.is_staff)
+        if not request.user.is_staff:
             return render(request, 'customer/home_page.html')
         else:
-            return render(request, 'customer/login_failed.html')
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(request, username=username, password=password)
+            print(user)
+            
+            try:
+                customer = Customer.objects.get(user = user)
+            except:
+                customer = None
+            if customer is not None:
+                auth.login(request, user)
+                return render(request, 'customer/home_page.html')
+            else:
+                return render(request, 'customer/login_failed.html')
 
 def logout_view(request):
     auth.logout(request)

@@ -1,18 +1,103 @@
 {% extends 'car_dealer/base.html' %}
-
+{% load static %}
 {% block content %}
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="w3-display-container" style="height:500px;">
-  <div class="w3-display-middle">
-      <form class = "w3-container" action="/car_dealer_portal/auth/" method="POST">{% csrf_token %}
-        <lable>Username</lable>  <input class="w3-input" type="text" name="username"><br><br>
-        <lable>Password</lable>  <input class="w3-input" type="password" name="password"><br><br>
-        <input class="w3-btn w3-green" type="submit" value="Login">
-      </form><br><br>
-      <div class="w3-container">
-        <a class="w3-btn w3-red" href="/car_dealer_portal/register/">Register as Dealer</a>
-        <a class="w3-btn w3-teal" href="/">Home</a>
-      </div>
-  </div>
-</div>
+<head>
+    {% comment %} <meta charset="utf-8" name = "csrf_token" content="{{ csrf_token }}"> {% endcomment %}
+    <meta charset="utf-8">
+    <title>The Auto One</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{%static 'images/icons/favicon.ico' %}"/>
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{%static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{%static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{%static 'vendor/animate/animate.css' %}">
+    <!--===============================================================================================-->	
+        <link rel="stylesheet" type="text/css" href="{%static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{%static 'vendor/select2/select2.min.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{%static 'css/util.css' %}">
+        <link rel="stylesheet" type="text/css" href="{%static 'css/main.css' %}">
+    <!--===============================================================================================-->
+    </head>
+    <body>
+        
+        <div class="limiter">
+            <div  class="container-login100">
+                <div  class="wrap-login100">
+                    <div class="login100-pic js-tilt" data-tilt>
+                        {% comment %} <a href ="/" /> {% endcomment %}
+                        <img src="{%static 'images/img-01.png' %}" alt="IMG">
+                    </div>
+                        
+                    <form class="login100-form validate-form" action="/car_dealer_portal/auth/" method="POST"> {% csrf_token %}
+                        <span class="login100-form-title">
+                            Car Dealer Login
+                        </span>
+                        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                            <input class="input100" type="text" name="username" placeholder="Type your username...">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </span>
+                        </div>
+    
+                        <div class="wrap-input100 validate-input" data-validate = "Password is required">
+                            <input class="input100" type="password" name="password" placeholder="Type your Password...">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                            </span>
+                        </div>                        
+                        <div class="container-login100-form-btn">
+                            <button class="login100-form-btn"  type="submit" value="Login">
+                                Login as Car Dealer
+                            </button>
+                        </div>
+                    </form>
+                        <div class="text-center p-t-136">
+                            <a class="txt2" href="/">
+                            Go back to Home
+                                <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="text-center p-t-136">
+                            <a class="txt2" href="/car_dealer_portal/register/">
+                            Register as Car Dealer
+                                <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    <!--===============================================================================================-->	
+        <script src="{%static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <!--===============================================================================================-->
+        <script src="{%static 'vendor/bootstrap/js/popper.js' %}"></script>
+        <script src="{%static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+        <script src="{%static 'vendor/select2/select2.min.js' %}"></script>
+    <!--===============================================================================================-->
+        <script src="{%static 'vendor/tilt/tilt.jquery.min.js' %}"></script>
+        <script >
+            $('.js-tilt').tilt({
+                scale: 1.1
+            })
+        </script>
+    <!--===============================================================================================-->
+        <script src="{%static 'js/mains.js' %}"></script>
+    
+    </body>
+    </html>
 {% endblock %}

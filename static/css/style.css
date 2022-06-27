@@ -30,6 +30,7 @@
 }
 
 
+
 /*** Heading ***/
 h1,
 h2,
@@ -159,6 +160,7 @@ h6,
         max-height: 45px;
     }
 }
+
 
 @media (min-width: 992px) {
     .navbar-light {

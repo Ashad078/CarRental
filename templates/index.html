@@ -48,7 +48,7 @@
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0">
                     <h1 class="m-0">The Auto-One</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                    <img src="{%static 'img/carbg.png' %}" alt="Logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -66,10 +66,9 @@
                             </div>
                         </div>
                     </div>
-                    <a href="" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Get Started</a>
+                    <a href="/" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Get Started</a> 
                 </div>
-            </nav>
-
+            </nav>           
             <div class="container-xxl bg-primary hero-header">
                 <div class="container px-lg-5">
                     <div class="row g-5 align-items-end">
@@ -79,8 +78,8 @@
                             <a href="/customer_portal/login/" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Login as Customer</a>
                             <a href="/car_dealer_portal/login/" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Login as Dealer</a>
                         </div>
-                        <div class="col-lg-6 text-center text-lg-start">
-                            <img class="img-fluid animated zoomIn" src="img/hero.png" alt="">
+                        <div class="col-lg-6 text-center text-lg-start" >
+                            <img class="img-fluid animated zoomIn" src="{%static 'img/carbg3.png' %}" alt="car">                       
                         </div>
                     </div>
                 </div>
@@ -89,36 +88,79 @@
         <!-- Navbar & Hero End -->
 
 
-        <!-- Feature Start -->
-        <div class="container-xxl py-5">
-            <div class="container py-5 px-lg-5">
-                <div class="row g-4">
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="feature-item bg-light rounded text-center p-4">
-                            <i class="fa fa-3x fa-mail-bulk text-primary mb-4"></i>
-                            <h5 class="mb-3">Customer</h5>
-                            <p class="m-0">Login & browse cars</p>
+                <!-- Service Start -->
+                <div class="container-xxl py-5">
+                    <div class="container py-5 px-lg-5">
+                        <div class="wow fadeInUp" data-wow-delay="0.1s">
+                            <p class="section-title text-secondary justify-content-center"><span></span>Inventory<span></span></p>
+                            <h1 class="text-center mb-5">Some available cars in our warehouse</h1>
                         </div>
-                    </div>
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="feature-item bg-light rounded text-center p-4">
-                            <i class="fa fa-3x fa-search text-primary mb-4"></i>
-                            <h5 class="mb-3">Search</h5>
-                            <p class="m-0">Search a car with your city</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="feature-item bg-light rounded text-center p-4">
-                            <i class="fa fa-3x fa-laptop-code text-primary mb-4"></i>
-                            <h5 class="mb-3">become member</h5>
-                            <p class="m-0">You can also give a car for rent</p>
+                        <div class="row g-4">
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="service-item d-flex flex-column text-center rounded">
+                                    <div class="service-icon flex-shrink-0">
+                                        <img src="{% static 'img/logo.jpg' %}" width="175px" alt="">
+                                    </div>
+                                    <h5 class="mb-3">Porshe</h5>
+                                    <p class="m-0">Modal : X1</p>
+                                    <a class="btn btn-square" href="/customer_portal/login/"><i class="fa fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="service-item d-flex flex-column text-center rounded">
+                                    <div class="service-icon flex-shrink-0">
+                                        <img src="{% static 'img/logo.jpg' %}" width="175px" alt="">
+                                    </div>
+                                    <h5 class="mb-3">Web Design</h5>
+                                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                                    <a class="btn btn-square" href="/customer_portal/login/"><i class="fa fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="service-item d-flex flex-column text-center rounded">
+                                    <div class="service-icon flex-shrink-0">
+                                        <img src="{% static 'img/logo.jpg' %}" width="175px" alt="">
+                                    </div>
+                                    <h5 class="mb-3">Social Media Marketing</h5>
+                                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                                    <a class="btn btn-square" href="/customer_portal/login/"><i class="fa fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="service-item d-flex flex-column text-center rounded">
+                                    <div class="service-icon flex-shrink-0">
+                                        <img src="{% static 'img/logo.jpg' %}" width="175px" alt="">
+                                    </div>
+                                    <h5 class="mb-3">Email Marketing</h5>
+                                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                                    <a class="btn btn-square" href="/customer_portal/login/"><i class="fa fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="service-item d-flex flex-column text-center rounded">
+                                    <div class="service-icon flex-shrink-0">
+                                        <img src="{% static 'img/logo.jpg' %}" width="175px" alt="">
+                                    </div>
+                                    <h5 class="mb-3">PPC Advertising</h5>
+                                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                                    <a class="btn btn-square" href="/customer_portal/login/"><i class="fa fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="service-item d-flex flex-column text-center rounded">
+                                    <div class="service-icon flex-shrink-0">
+                                        <img src="{% static 'img/logo.jpg' %}" width="175px" alt="">
+                                    </div>
+                                    <h5 class="mb-3">App Development</h5>
+                                    <p class="m-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                                    <a class="btn btn-square" href="/customer_portal/login/"><i class="fa fa-arrow-right"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- Feature End -->
-
+                <!-- Service End -->
+        
         <!-- Facts Start -->
         <div class="container-xxl bg-primary fact py-5 wow fadeInUp" data-wow-delay="0.1s">
             <div class="container py-5 px-lg-5">
@@ -227,8 +269,8 @@
                         <p class="section-title text-white h5 mb-4">Quick Link<span></span></p>
                         <a class="btn btn-link" href="/about">About Us</a>
                         <a class="btn btn-link" href="/service">Service</a>
-                        <a class="btn btn-link" href="">Privacy Policy</a>
-                        <a class="btn btn-link" href="">Terms & Condition</a>
+                        <a class="btn btn-link" href="https://www.freeprivacypolicy.com/live/0931e2f8-2dcb-49d9-be9a-15dbadf70828" target="_blank" rel="noopener">Privacy Policy</a>
+                        <a class="btn btn-link" href="https://www.termsandconditionsgenerator.com/live.php?token=U7MmgJObOwhahtbETWjwqEFNlsuwrMPl" target="_blank" rel="noopener">Terms & Condition</a>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <p class="section-title text-white h5 mb-4">Gallery<span></span></p>
@@ -273,8 +315,8 @@
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
                                 <a href="/">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="">Help</a>
+                                <a href="https://www.freeprivacypolicy.com/live/29e388f2-5f25-45c0-9d0b-cbbc00725375" target="_blank" rel="noopener">Cookies</a>
+                                <a href="https://support.google.com/" target="_blank" rel="noopener">Help</a>
                                 <a href="">FQAs</a>
                             </div>
                         </div>
