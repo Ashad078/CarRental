@@ -9,4 +9,7 @@ urlpatterns = [
     path('',home_page),
     path('about',about),
     path('service',service),
+
+
+    path('admin_index/',admin_index,name='admin_index'),
 ]

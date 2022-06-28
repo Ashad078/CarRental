@@ -15,4 +15,8 @@ urlpatterns = [
     re_path(r'^manage/',manage),
     re_path(r'^update/',update_order),
     re_path(r'^delete/',delete_order),
+
+    # ---admin--
+
+    
 ]

@@ -169,3 +169,7 @@ def delete_order(request):
     vehicle.save()
     order.delete()
     return HttpResponseRedirect('/customer_portal/manage/')
+
+
+    # --------------- admin - site ------------
+

@@ -10,4 +10,8 @@ def about(request):
 
 def service(request):
     return render(request, 'service.html') 
-        
+
+def admin_index(request):
+    return render(request,'Admin_Template/A_index.html')
+
+
