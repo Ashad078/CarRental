@@ -1,5 +1,7 @@
 from django.urls import path,include, re_path
 from customer_portal.views import *
+from django.contrib.auth import views as auth_views
+
 # from django.conf.urls import url
 urlpatterns = [
     re_path(r'^index/$',index),
@@ -17,6 +19,5 @@ urlpatterns = [
     re_path(r'^delete/',delete_order),
 
     # ---admin--
-
     
 ]

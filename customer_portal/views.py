@@ -171,5 +171,7 @@ def delete_order(request):
     return HttpResponseRedirect('/customer_portal/manage/')
 
 
+
+
     # --------------- admin - site ------------
 
