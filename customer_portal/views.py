@@ -102,7 +102,8 @@ def search_results(request):
 def rent_vehicle(request):
     id = request.POST['id']
     vehicle = Vehicles.objects.get(id = id)
-    cost_per_day = int(vehicle.capacity)*13
+    cost_per_day = int(vehicle.capacity)*100
+    
     return render(request, 'customer/confirmation.html', {'vehicle':vehicle, 'cost_per_day':cost_per_day})
 
 @login_required
@@ -111,17 +112,18 @@ def confirm(request):
     username = request.user
     user = User.objects.get(username = username)
     days = request.POST['days']
+    sdate=request.POST['sdate']
     vehicle = Vehicles.objects.get(id = vehicle_id)
     if vehicle.is_available:
         car_dealer = vehicle.dealer
-        rent = (int(vehicle.capacity))*13*(int(days))
+        rent = (int(vehicle.capacity))*100*(int(days))
         car_dealer.wallet += rent
         car_dealer.save()
         try:
-            order = Orders(vehicle = vehicle, car_dealer = car_dealer, user = user, rent=rent, days=days)
+            order = Orders(vehicle = vehicle, car_dealer = car_dealer, user = user, rent=rent, sdate=sdate, days=days)
             order.save()
         except:
-            order = Orders.objects.get(vehicle = vehicle, car_dealer = car_dealer, user = user, rent=rent, days=days)
+            order = Orders.objects.get(vehicle = vehicle, car_dealer = car_dealer, user = user, rent=rent, days=days,sdate=sdate)
         vehicle.is_available = False
         vehicle.save()
         return render(request, 'customer/confirmed.html', {'order':order})

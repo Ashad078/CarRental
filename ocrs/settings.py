@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'ocrs.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Sample',
+        'NAME': 'rentcar',
         'USER': 'root',
         'PASSWORD': 'admin',
         'HOST': 'localhost',

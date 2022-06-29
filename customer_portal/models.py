@@ -2,6 +2,7 @@ from django.db import models
 from django.db import models
 from django.core.validators import *
 from django.contrib.auth.models import User
+from django.forms import DateField
 from car_dealer_portal.models import *
 # Create your models here.
 
@@ -17,3 +18,4 @@ class Orders(models.Model):
     vehicle = models.ForeignKey(Vehicles, on_delete=models.PROTECT)
     days = models.CharField(max_length = 3)
     is_complete = models.BooleanField(default = False)
+    sdate=models.DateField(null=True,blank=True)
