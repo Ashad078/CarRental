@@ -71,7 +71,7 @@
               <div class="container my-5 py-5 px-lg-5">
                   <div class="row g-5 py-5">
                       <div class="col-12 text-center">
-                          <h2 class="text-white animated slideInDown">Welcome, {{user.username}}</h2>
+                          {% comment %} <h2 class="text-white animated slideInDown">Welcome, {{user.username}}</h2> {% endcomment %}
                           {% comment %} <hr class="bg-white mx-auto mt-0" style="width: 90px;">
                           <nav aria-label="breadcrumb">
                               <ol class="breadcrumb justify-content-center">
@@ -97,7 +97,7 @@
 <div class="w3-display-container" style="height:300px;">
   <div class="w3-display-middle">
     <br><br>
-    <h4 class="alert alert-warning">Vehicle Details Added! <br/> <br/> Dear Dealer Please Remember That you have to drop your car at our warehouse</h4>
+    <h4 class="alert alert-warning">Vehicle Details Added! <br/> <br/> Dear {{user.username}} Please Remember That you have to drop your car at our warehouse</h4>
     {% comment %} <a href="/car_dealer_portal/index/">Back To Home Page</a> {% endcomment %}
     <div class="text-center p-t-136">
       <a class="txt2" href="/car_dealer_portal/index/">
