@@ -99,34 +99,44 @@
         <form>
         </div> {% endcomment %}
 <div>
-        <form action="/car_dealer_portal/add_vehicle/" method="post"> {% csrf_token %}
-          <div class="form-group">
-            <label for="exampleInputEmail1">Car name</label><br><br>
-            <input type="text" class="form-control"  placeholder="Enter Car Name" name = "car_name">
-          </div><br><br>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Color</label><br><br>
-            <input type="text" class="form-control" placeholder="Enter color" name = "color">
-          </div><br><br>
-          <div class="form-group">
-            <label for="exampleInputEmail1">City</label><br><br>
-            <input type="text" class="form-control"  placeholder="Enter City" name = "city">
-          </div><br><br>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Pincode</label><br><br>
-            <input type="text" class="form-control"  placeholder="Enter Pincode" name = "pincode">
-          </div><br><br>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Description</label><br><br>
-            <input type="text" class="form-control"  placeholder="Enter Description" name = "description">
-          </div><br><br>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Capacity [Seats]</label><br><br>
-            <input type="text" class="form-control"  placeholder="Enter Seats" name = "capacity">
-          </div><br><br>
-          <input class="btn btn-primary py-sm-3 px-sm-5 rounded-pill mt-3" type="submit" value="Add Vehicle"></a>
-       </form> 
-</div>  
+    <form class="row g-3" action="/car_dealer_portal/add_vehicle/" method="post"> {% csrf_token %}
+        <div class="col-auto">
+          <label for="inputPassword2" class="visually">Car name</label>
+          <input type="text"  class="form-control" id="staticEmail2" name = "car_name" placeholder="car_name">
+        </div>
+        
+        <div class="col-auto">
+          <label for="inputPassword2" class="visually">Color</label>
+          <input type="text"  class="form-control" id="staticEmail2" name = "color" placeholder="color">
+        </div>
+        
+        <div class="col-auto">
+          <label for="inputPassword2" class="visually">City</label>
+          <input type="text"  class="form-control" id="staticEmail2" name = "city" placeholder="city">
+        </div>
+
+<p>
+        
+        <div class="col-auto">
+          <label for="inputPassword2" class="visually">Pincode</label>
+          <input type="text"  class="form-control" id="staticEmail2" name = "pincode" placeholder="pincode">
+        </div>
+        
+        <div class="col-auto">
+          <label for="inputPassword2" class="visually">Description</label>
+          <input type="text"  class="form-control" id="staticEmail2" name = "description" placeholder="Description">
+        </div>
+        
+        <div class="col-auto">
+          <label for="inputPassword2" class="visually">Capacity</label>
+          <input type="text"  class="form-control" id="staticEmail2" placeholder="Capacity" name = "capacity">
+        </div>
+        
+        <div class="col-auto">
+        <input class="btn btn-primary py-sm-3 px-sm-5 rounded-pill mt-3" type="submit" value="+ Add Vehicle">
+        </div>
+      </form>
+    </div>  
                 
 <!-- Footer Start -->
 <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">

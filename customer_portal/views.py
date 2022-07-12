@@ -109,6 +109,7 @@ def rent_vehicle(request):
 @login_required
 def confirm(request):
     vehicle_id = request.POST['id']
+    amount = request.POST.get('amount', '')
     username = request.user
     user = User.objects.get(username = username)
     days = request.POST['days']
@@ -120,10 +121,10 @@ def confirm(request):
         car_dealer.wallet += rent
         car_dealer.save()
         try:
-            order = Orders(vehicle = vehicle, car_dealer = car_dealer, user = user, rent=rent, sdate=sdate, days=days)
+            order = Orders(vehicle = vehicle, car_dealer = car_dealer, user = user, rent=rent, sdate=sdate, days=days, amount=amount)
             order.save()
         except:
-            order = Orders.objects.get(vehicle = vehicle, car_dealer = car_dealer, user = user, rent=rent, days=days,sdate=sdate)
+            order = Orders.objects.get(vehicle = vehicle, car_dealer = car_dealer, user = user, rent=rent, days=days,sdate=sdate, amount=amount)
         vehicle.is_available = False
         vehicle.save()
         return render(request, 'customer/confirmed.html', {'order':order})
@@ -173,7 +174,4 @@ def delete_order(request):
     return HttpResponseRedirect('/customer_portal/manage/')
 
 
-
-
     # --------------- admin - site ------------
-

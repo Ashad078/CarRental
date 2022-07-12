@@ -3,6 +3,7 @@ from django.db import models
 from django.core.validators import *
 from django.contrib.auth.models import User
 from django.forms import DateField
+from numpy import deg2rad
 from car_dealer_portal.models import *
 # Create your models here.
 
@@ -13,6 +14,7 @@ class Customer(models.Model):
 
 class Orders(models.Model):
     user = models.ForeignKey(User, on_delete=models.PROTECT)
+    amount = models.IntegerField(default=0)
     car_dealer = models.ForeignKey(CarDealer, on_delete=models.PROTECT)
     rent = models.CharField(max_length=8)
     vehicle = models.ForeignKey(Vehicles, on_delete=models.PROTECT)

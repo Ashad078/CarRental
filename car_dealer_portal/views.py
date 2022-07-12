@@ -77,6 +77,8 @@ def registration(request):
         car_dealer = CarDealer(car_dealer = user, mobile = mobile, area=area)
     car_dealer.save()
     return render(request, 'car_dealer/registered.html')
+    
+
 
 @login_required
 def add_vehicle(request):
