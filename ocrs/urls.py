@@ -25,6 +25,6 @@ urlpatterns = [
     path('service',include('home.urls')),
 ]
 
-admin.site.site_header = "an Ashad Khira's Company"
+admin.site.site_header = "The auto-one"
 admin.site.site_title = "Admin_Page"
 admin.site.index_title = "Welcome to Ashad's Admin Portal"
